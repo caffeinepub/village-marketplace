@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm parchment background */
+    --background: 0.96 0.018 80;
+    --foreground: 0.22 0.04 50;
+
+    /* Card: slightly warm white */
+    --card: 0.99 0.008 75;
+    --card-foreground: 0.22 0.04 50;
+
+    /* Popover */
+    --popover: 0.99 0.008 75;
+    --popover-foreground: 0.22 0.04 50;
+
+    /* Primary: terracotta/brick */
+    --primary: 0.52 0.155 32;
+    --primary-foreground: 0.97 0.015 80;
+
+    /* Secondary: warm sand */
+    --secondary: 0.91 0.03 78;
+    --secondary-foreground: 0.35 0.06 45;
+
+    /* Muted */
+    --muted: 0.93 0.02 78;
+    --muted-foreground: 0.52 0.04 60;
+
+    /* Accent: forest green */
+    --accent: 0.46 0.11 148;
+    --accent-foreground: 0.97 0.015 80;
+
+    /* Destructive */
+    --destructive: 0.5 0.18 20;
+    --destructive-foreground: 0.97 0.015 80;
+
+    /* Border & Input */
+    --border: 0.86 0.025 75;
+    --input: 0.86 0.025 75;
+    --ring: 0.52 0.155 32;
+
+    --radius: 0.75rem;
+
+    /* Chart colors */
+    --chart-1: 0.52 0.155 32;
+    --chart-2: 0.46 0.11 148;
+    --chart-3: 0.65 0.12 55;
+    --chart-4: 0.58 0.13 260;
+    --chart-5: 0.7 0.1 190;
+
+    /* Sidebar */
+    --sidebar: 0.93 0.022 78;
+    --sidebar-foreground: 0.22 0.04 50;
+    --sidebar-primary: 0.52 0.155 32;
+    --sidebar-primary-foreground: 0.97 0.015 80;
+    --sidebar-accent: 0.88 0.03 78;
+    --sidebar-accent-foreground: 0.35 0.06 45;
+    --sidebar-border: 0.86 0.025 75;
+    --sidebar-ring: 0.52 0.155 32;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: "Fraunces", serif;
+  }
+}
+
+@layer utilities {
+  .texture-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  .category-food {
+    @apply bg-amber-100 text-amber-800 border border-amber-200;
+  }
+  .category-crafts {
+    @apply bg-rose-100 text-rose-800 border border-rose-200;
+  }
+  .category-clothing {
+    @apply bg-sky-100 text-sky-800 border border-sky-200;
+  }
+  .category-tools {
+    @apply bg-stone-100 text-stone-800 border border-stone-200;
+  }
+  .category-electronics {
+    @apply bg-indigo-100 text-indigo-800 border border-indigo-200;
+  }
+  .category-furniture {
+    @apply bg-orange-100 text-orange-800 border border-orange-200;
+  }
+  .category-services {
+    @apply bg-emerald-100 text-emerald-800 border border-emerald-200;
+  }
+  .category-other {
+    @apply bg-purple-100 text-purple-800 border border-purple-200;
+  }
+}
